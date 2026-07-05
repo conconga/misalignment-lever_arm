@@ -1,0 +1,6 @@
+[submodule "submodules/gcnutils"]
+	path = submodules/gcnutils
+	url = https://github.com/conconga/gcnutils.git
+[submodule "submodules/estimators"]
+	path = submodules/estimators
+	url = https://github.com/conconga/estimators.git
