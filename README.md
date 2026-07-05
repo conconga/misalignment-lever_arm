@@ -108,6 +108,8 @@ simultaneously using the
 
 # Code and Dataset
 
+![Class Diagram](assets/classes.svg)
+
 I tried several algorithms, nine in total. I show here the results of some of them.
 The complete code is available here, and will be updated as I come back to the project and
 make new tests.
