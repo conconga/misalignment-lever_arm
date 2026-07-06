@@ -75,7 +75,7 @@ process.
 
 The problem is normally divided into its two components:
 - one solution to the misalignment, and
-- using the solution above, estimate the misalignment.
+- using the solution above, estimate the lever-arm.
 
 Either in 1965 or 1966 Grace Wahba formulated the misalignment problem as a
 cost function summing up errors between reference vectors and misaligned ones
