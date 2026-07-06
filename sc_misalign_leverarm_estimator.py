@@ -357,7 +357,7 @@ def fn_show_pictures(process_results = None, args=None):
         ax[i].grid(True)
         ax[i].set_ylabel(f'euler[{i}] [deg]')
         ax[i].set_ylim([-10,10])
-        ax[i].legend(('8th', '9th'))
+        ax[i].legend(('5th', '8th', '9th'))
 
         ax[i].plot(T, df_euler_s2m[['phi', 'tta', 'psi'][i]])
 
