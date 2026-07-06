@@ -205,8 +205,7 @@ $\underline{\beta}(t)$ are composed by two equations:
 
 | $\underline{\alpha}(t)$ | $\underline{\beta}(t)$ |
 | :---------------------: | :--------------------: |
-| $\underline{0}$ | $\left( \left[ \underline{\omega}_{is}^{s} \right]^+ -
-        \left[ \underline{\omega}_{im}^{m} \right]^- \right) \cdot \underline{q}_{s}^{m}$ |
+| $\underline{0}$ | $\left( \left[ \underline{\omega}_{is}^{s} \right]^+ - \left[ \underline{\omega}_{im}^{m} \right]^- \right) \cdot \underline{q}_{s}^{m}$ |
 | 1 | $\| \underline{q} \|$ |
 
 
@@ -233,10 +232,8 @@ equations:
 
 | $\underline{\alpha}(t)$ | $\underline{\beta}(t)$ |
 | :---------------------: | :--------------------: |
-| $\underline{0}$ | $\left( \left[ \underline{\omega}_{is}^{s} \right]^+ -
-        \left[ \underline{\omega}_{im}^{m} \right]^- \right) \cdot \underline{q}_{s}^{m}$ |
-| $\underline{0}$ | $\left( \left[ \underline{f}_m^m + \underline{\Omega}\underline{r}_a^m
-        \right]^- - \left[ \underline{f}_s^s \right]^+ \right) \cdot \underline{q}_s^m$   |
+| $\underline{0}$ | $\left( \left[ \underline{\omega}_{is}^{s} \right]^+ - \left[ \underline{\omega}_{im}^{m} \right]^- \right) \cdot \underline{q}_{s}^{m}$ |
+| $\underline{0}$ | $\left( \left[ \underline{f}_m^m + \underline{\Omega}\underline{r}_a^m \right]^- - \left[ \underline{f}_s^s \right]^+ \right) \cdot \underline{q}_s^m$   |
 | 1 | $\| \underline{q} \|$ |
 
 where $\Omega = \Omega_{im}^{m} \cdot \Omega_{im}^{m} + \dot{\Omega}_{im}^{m}$ and
