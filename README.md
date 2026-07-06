@@ -263,11 +263,11 @@ algorithms and all acquisitions.
 ## Misalignment
 
 For the Sassari setup, I do not expect any change in the displacement and
-alignment of the sensors. At least, if any, these changes are not documented.
-Given that the Q-Method estimates a static misalignment, the respective
-algorithm shall be a good option here, and possibly it will provide the most
-accurate results.  It is weird though, that it changes its rate close to after
-90[s]. Was there any loose component in the setup?
+alignment of the sensors along the acquisitions. I actually expect a fast
+convergence and a good accuracy at the estimation using the Q-method.
+It is weird though, that the algorithm changes its rate close to and after
+90[s], suggestion some relative movement among the sensors. Was there any loose
+component in the setup?
 
 ![Misalignment between sensors XS2 and SH1.](assets/xs2-sh1.svg)
 
