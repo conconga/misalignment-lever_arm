@@ -280,12 +280,16 @@ equations:
 where $\Omega = \Omega_{im}^{m} \cdot \Omega_{im}^{m} + \dot{\Omega}_{im}^{m}$ and
 $\underline{r}_a$ is the lever-arm.
 
+This algorithm is located in the file [`kAlgo8th.py`](kAlgo8th.py).
+
 ## Algorithm 9th - Combo with Buffer
 
 This algorithm is very similar to the 8th, but it decimates the time and
 accumulates some samples of sensor data before updating the outputs. It is
 expected here to have some immunity to noise, and a more stable convergence, at
 the expense of lower bandwidth.
+
+This algorithm is located in the file [`kAlgo9th.py`](kAlgo9th.py).
 
 # Results
 

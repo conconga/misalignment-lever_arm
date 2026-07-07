@@ -436,7 +436,7 @@ def fn_show_pictures(process_results = None, args=None):
 
             for j in range(3):
                 ax[j].grid(True, alpha=0.5)
-                ax[j].set_ylabel(f'{["phi", "theta", "psi"][j]}')
+                ax[j].set_ylabel(f'{["phi [deg]", "theta [deg]", "psi [deg]"][j]}')
                 ax[j].set_ylim((-2,2))
 
             if args.is_export_assets and (sensorA.lower() == "xs2") and (sensorB.lower() == "sh1"):
@@ -461,7 +461,8 @@ def fn_show_pictures(process_results = None, args=None):
             ax_la[idx_sensorA].plot([0, point[0]], [0, point[1]], color=color)
 
 
-        ax_la[idx_sensorA].set_ylabel(f'from {sensorA}')
+        ax_la[idx_sensorA].set_ylabel(f'from {sensorA} [mm]')
+        ax_la[idx_sensorA].set_xlabel(f'[mm]')
         ax_la[idx_sensorA].grid(True, alpha=0.5)
         #ax_la[idx_sensorA].invert_xaxis()
     fig_la.tight_layout()
