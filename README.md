@@ -187,8 +187,8 @@ equations:
 
 | $\underline{\alpha}(t)$ | $\underline{\beta}(t)$ |
 | :---------------------: | :--------------------: |
-| $\underline{\omega}_{im}^{m}$ | $\underline{R}_s^m \underline{\omega}_{is}^s$ |
-| 1 | $\| \underline{q} \|$ |
+| $\underline{\omega}_{im}^{m}$ | $\underline{R}_{s}^{m} \underline{\omega}_{is}^{s}$ |
+| 1 | $\Vert \underline{q} \Vert$ |
 
 The second equation is a constraint to keep the norm of the quaternion close to 1.0. It will
 deviate a bit, but there is a step of normalization, and the result if better when its norm
@@ -280,3 +280,4 @@ Remark: The diagrams below were created using the last estimation of the
 lever-arm, after having all input samples processed.
 
 ![Lever-Arm](assets/lever-arm.svg)
+
