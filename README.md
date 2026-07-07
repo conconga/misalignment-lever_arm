@@ -185,11 +185,6 @@ This algorithm is based on EFOL, and estimates only the misalignment. The
 vectors $\underline{\alpha}(t)$ and $\underline{\beta}(t)$ are composed by two
 equations:
 
-| $\underline{\alpha}(t)$ | $\underline{\beta}(t)$ |
-| :---------------------: | :--------------------: |
-| `$ \underline{\omega}_{im}^{m} $` | `$ \underline{R}_{s}^{m} \underline{\omega}_{is}^{s} $` |
-| 1 | `$ \Vert \underline{q} \Vert $` |
-
 <table> <thead>
     <tr> <th align="center">$\underline{\alpha}(t)$</th> <th align="center">$\underline{\beta}(t)$</th> </tr>
 </thead>
@@ -212,11 +207,23 @@ uses some properties of quaternions to skip most of the associated
 nonlinearities.  The vectors $\underline{\alpha}(t)$ and
 $\underline{\beta}(t)$ are composed by two equations:
 
-| $\underline{\alpha}(t)$ | $\underline{\beta}(t)$ |
-| :---------------------: | :--------------------: |
-| $\underline{0}$ | $\left( \left[ \underline{\omega}_{is}^{s} \right]^+ - \left[ \underline{\omega}_{im}^{m} \right]^- \right) \cdot \underline{q}_{s}^{m}$ |
-| 1 | $\| \underline{q} \|$ |
-
+<table>
+    <thead>
+        <tr>
+            <th align="center">$\underline{\alpha}(t)$</th> <th align="center">$\underline{\beta}(t)$</th>
+        </tr>
+    </thead>
+    <body>
+        <tr>
+            <td align="center">$\underline{0}$</td>
+            <td align="center">$\left( \left[ \underline{\omega}_{is}^{s} \right]^+ - \left[ \underline{\omega}_{im}^{m} \right]^- \right) \cdot \underline{q}_{s}^{m}$</td>
+        </tr>
+        <tr>
+            <td align="center">1</td>
+            <td align="center">$\Vert \underline{q} \Vert$ </td>
+        </tr>
+    </body>
+</table>
 
 This algorithm is located in the file [`kAlgo4th.py](kAlgo4th.py).
 
