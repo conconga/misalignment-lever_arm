@@ -187,8 +187,17 @@ equations:
 
 | $\underline{\alpha}(t)$ | $\underline{\beta}(t)$ |
 | :---------------------: | :--------------------: |
-| `$\underline{\omega}_{im}^{m}$` | `$\underline{R}_{s}^{m} \underline{\omega}_{is}^{s}$` |
-| 1 | $\Vert \underline{q} \Vert$ |
+| `$ \underline{\omega}_{im}^{m} $` | `$ \underline{R}_{s}^{m} \underline{\omega}_{is}^{s} $` |
+| 1 | `$ \Vert \underline{q} \Vert $` |
+
+<table> <thead>
+    <tr> <th align="center">$\underline{\alpha}(t)$</th> <th align="center">$\underline{\beta}(t)$</th> </tr>
+</thead>
+<tbody>
+<tr> <td align="center">$\underline{\omega}_{im}^{m}$</td> <td align="center">$\underline{R}_s^m \underline{\omega}_{is}^s$</td> </tr>
+<tr> <td align="center">1</td> <td align="center">$\Vert \underline{q} \Vert$</td> </tr>
+</tbody>
+</table>
 
 The second equation is a constraint to keep the norm of the quaternion close to 1.0. It will
 deviate a bit, but there is a step of normalization, and the result if better when its norm
