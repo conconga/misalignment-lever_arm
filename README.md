@@ -185,13 +185,22 @@ This algorithm is based on EFOL, and estimates only the misalignment. The
 vectors $\underline{\alpha}(t)$ and $\underline{\beta}(t)$ are composed by two
 equations:
 
-<table> <thead>
-    <tr> <th align="center">$\underline{\alpha}(t)$</th> <th align="center">$\underline{\beta}(t)$</th> </tr>
-</thead>
-<tbody>
-<tr> <td align="center">$\underline{\omega}_{im}^{m}$</td> <td align="center">$\underline{R}_s^m \underline{\omega}_{is}^s$</td> </tr>
-<tr> <td align="center">1</td> <td align="center">$\Vert \underline{q} \Vert$</td> </tr>
-</tbody>
+<table>
+    <thead>
+        <tr>
+            <th align="center">$\underline{\alpha}(t)$</th> <th align="center">$\underline{\beta}(t)$</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center">$\underline{\omega}_{im}^{m}$</td>
+            <td align="center">$\underline{R}_s^m \underline{\omega}_{is}^s$</td>
+        </tr>
+        <tr>
+            <td align="center">1</td>
+            <td align="center">$\Vert \underline{q} \Vert$</td>
+        </tr>
+    </tbody>
 </table>
 
 The second equation is a constraint to keep the norm of the quaternion close to 1.0. It will
