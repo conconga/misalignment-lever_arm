@@ -246,11 +246,27 @@ This algorithm is located in the file [`kAlgoRLS.py`](kAlgoRLS.py).
 Using EFOL, this algorithm estimates simultaneously misalignment and lever-arm by means of these
 equations:
 
-| $\underline{\alpha}(t)$ | $\underline{\beta}(t)$ |
-| :---------------------: | :--------------------: |
-| $\underline{0}$ | $\left( \left[ \underline{\omega}_{is}^{s} \right]^+ - \left[ \underline{\omega}_{im}^{m} \right]^- \right) \cdot \underline{q}_{s}^{m}$ |
-| $\underline{0}$ | $\left( \left[ \underline{f}_m^m + \underline{\Omega}\underline{r}_a^m \right]^- - \left[ \underline{f}_s^s \right]^+ \right) \cdot \underline{q}_s^m$   |
-| 1 | $\| \underline{q} \|$ |
+<table>
+    <thead>
+        <tr>
+            <th align="center">$\underline{\alpha}(t)$</th> <th align="center">$\underline{\beta}(t)$</th>
+        </tr>
+    <thead>
+    <body>
+        <tr>
+            <td align="center">$\underline{0}$</td>
+            <td align="center">$\left( \left[ \underline{\omega}_{is}^{s} \right]^+ - \left[ \underline{\omega}_{im}^{m} \right]^- \right) \cdot \underline{q}_{s}^{m}$</td>
+        </tr>
+        <tr>
+            <td align="center">$\underline{0}$</td>
+            <td align="center">$\left( \left[ \underline{f}_m^m + \underline{\Omega}\underline{r}_a^m \right]^- - \left[ \underline{f}_s^s \right]^+ \right) \cdot \underline{q}_s^m$</td>
+        </tr>
+        <tr>
+            <td align="center">1</td>
+            <td align="center">$\Vert \underline{q} \Vert$</td>
+        </tr>
+    </body>
+</table>
 
 where $\Omega = \Omega_{im}^{m} \cdot \Omega_{im}^{m} + \dot{\Omega}_{im}^{m}$ and
 $\underline{r}_a$ is the lever-arm.
