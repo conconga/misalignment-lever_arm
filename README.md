@@ -1,34 +1,37 @@
 - [<span class="toc-section-number">1</span>
   Introduction](#introduction)
-- [<span class="toc-section-number">2</span> Assumptions](#assumptions)
-- [<span class="toc-section-number">3</span> Review](#review)
-- [<span class="toc-section-number">4</span> Motivation](#motivation)
-- [<span class="toc-section-number">5</span> Code and
+- [<span class="toc-section-number">2</span> Key
+  Achievements](#key-achievements)
+- [<span class="toc-section-number">3</span> Assumptions](#assumptions)
+- [<span class="toc-section-number">4</span> Review](#review)
+- [<span class="toc-section-number">5</span> Motivation](#motivation)
+- [<span class="toc-section-number">6</span> Quick Start](#quick-start)
+- [<span class="toc-section-number">7</span> Code and
   Dataset](#code-and-dataset)
-  - [<span class="toc-section-number">5.1</span> About the
+  - [<span class="toc-section-number">7.1</span> About the
     Dataset](#about-the-dataset)
-  - [<span class="toc-section-number">5.2</span> Sensors](#sensors)
-  - [<span class="toc-section-number">5.3</span>
+  - [<span class="toc-section-number">7.2</span> Sensors](#sensors)
+  - [<span class="toc-section-number">7.3</span>
     Orientation](#orientation)
-  - [<span class="toc-section-number">5.4</span> Notation](#notation)
-- [<span class="toc-section-number">6</span> Algorithms](#algorithms)
-  - [<span class="toc-section-number">6.1</span> Algorithm
+  - [<span class="toc-section-number">7.4</span> Notation](#notation)
+- [<span class="toc-section-number">8</span> Algorithms](#algorithms)
+  - [<span class="toc-section-number">8.1</span> Algorithm
     2nd](#algorithm-2nd)
-  - [<span class="toc-section-number">6.2</span> Algorithm
+  - [<span class="toc-section-number">8.2</span> Algorithm
     4th](#algorithm-4th)
-  - [<span class="toc-section-number">6.3</span> Algorithm
+  - [<span class="toc-section-number">8.3</span> Algorithm
     5th](#algorithm-5th)
-  - [<span class="toc-section-number">6.4</span> Algorithm
+  - [<span class="toc-section-number">8.4</span> Algorithm
     6th](#algorithm-6th)
-  - [<span class="toc-section-number">6.5</span> Algorithm 8th -
+  - [<span class="toc-section-number">8.5</span> Algorithm 8th -
     Combo](#algorithm-8th---combo)
-  - [<span class="toc-section-number">6.6</span> Algorithm 9th - Combo
+  - [<span class="toc-section-number">8.6</span> Algorithm 9th - Combo
     with Buffer](#algorithm-9th---combo-with-buffer)
-- [<span class="toc-section-number">7</span> Results](#results)
-  - [<span class="toc-section-number">7.1</span> Legend](#legend)
-  - [<span class="toc-section-number">7.2</span>
+- [<span class="toc-section-number">9</span> Results](#results)
+  - [<span class="toc-section-number">9.1</span> Legend](#legend)
+  - [<span class="toc-section-number">9.2</span>
     Misalignment](#misalignment)
-  - [<span class="toc-section-number">7.3</span> Lever-Arm](#lever-arm)
+  - [<span class="toc-section-number">9.3</span> Lever-Arm](#lever-arm)
 
 # Introduction
 
@@ -54,6 +57,17 @@ This project will deal only with the case of a rigid frame, under the assumption
 
 Hereafter the relative displacement will be referred simply as lever-arm.
 
+# Key Achievements
+
+- Evaluation and benchmark of 9 different algorithms to estimate misalignment and lever-arm among IMUs;
+- Implementation of the *Q-Method* to estimate only misalignment;
+- Implementation of the RLS algorithm to estimate only the lever-arm;
+- Implementation of [EFOL](https://github.com/conconga/estimators/tree/main/efol) algorithm as a
+module enabling easy reuse of it (the respective documentation includes its deduction.)
+- Successfully demonstration of EFOL to estimate simultaneously both misalignment and lever-arm.
+
+These results are directly applicable by industry of wearables, automotive and aerospace.
+
 # Assumptions
 
 - the lever-arm among the sensors is not considered static. This means that it
@@ -63,13 +77,12 @@ parts.
 - the misalignment is also not considered static. It might drift and change over
 time.
 
-- any estimation is allowed to deteriorate with time due to changes in the
-environment. For example, sensors in the side-mirror might have different
-alignments when parking or driving at high speeds.
+- the actual setup might drift; the estimation is supposed to follow it.  For
+example, sensors in the side-mirror might have different alignments when
+parking or driving at high speeds.
 
-- besides the inertial measurements, there is no additional source of
-information; this fact implies that sensor bias cannot be estimated during the
-process.
+- the measurements of IMU's are the only source of information; this fact
+implies that sensor bias cannot be estimated during the process.
 
 # Review
 
@@ -106,6 +119,24 @@ My interest was to verify whether misalignment and lever-arm can be estimated
 simultaneously using the
 [EFOL](https://github.com/conconga/estimators/tree/main/efol) approach
 
+# Quick Start
+
+Two scripts manage the whole setup and execution of the estimation. You call 
+
+```shell
+$ python3 sc_misalign_leverarm_estimator.py -b -d sassari -m slow -M xs1 -S ap2
+```
+
+for a single shot with the sassari dataset, record *slow* with master sensor *XS1* and
+slave sensor *AP2*. Use `-h` for more options.
+
+You can also call a batch script to perform all combinations of master/slave with the
+sassari dataset and all available algorithms:
+
+```shell
+$ python3 sc_batch_sassari.py -b
+```
+
 # Code and Dataset
 
 ![Class Diagram](assets/classes.svg)
@@ -129,12 +160,12 @@ out!](https://github.com/marcocaruso/mimu_optical_dataset_caruso_sassari/release
 
 ## About the Dataset
 
-Maybe some assumptions I make here are covered or described in the article, but
-I do not have access to it behind the paywall.
+Maybe some additional assumptions I make here are covered or described in the
+article, which I do not have access.
 
 The authors release with the data a picture of the setup:
 
-![Sassari Setup](data/sassari_dataset/mimu_optical_dataset_caruso_sassari-5.0/1619619646-3053265616.png){width=200px}
+![Sassari Setup](data/sassari_dataset/mimu_optical_dataset_caruso_sassari-5.0/1619619646-3053265616-small.png)
 
 There are neither sketches nor diagrams nor information about dimensions and
 distances. Moreover, the picture is not orthogonal, but a perspective. Anyhow,
@@ -304,11 +335,12 @@ algorithms and all acquisitions.
 
 ## Misalignment
 
+The picture shows corrective euler angles around +/- 1[deg] for all algorithms.
 For the Sassari setup, I do not expect any change in the displacement and
 alignment of the sensors along the acquisitions. I actually expect a fast
-convergence and a good accuracy at the estimation using the Q-method.
-It is weird though, that the algorithm changes its rate close to and after
-90[s], suggesting some relative movement among the sensors. Was there any loose
+convergence and a good accuracy at the estimation using the Q-method.  It is
+weird though, that the algorithm changes its rate close to and after 90[s],
+suggesting some relative movement among the sensors. Was there any loose
 component in the setup?
 
 ![Misalignment between sensors XS2 and SH1.](assets/xs2-sh1.svg)
