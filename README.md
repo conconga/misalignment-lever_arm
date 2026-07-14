@@ -128,7 +128,7 @@ $ python3 sc_misalign_leverarm_estimator.py -b -d sassari -m slow -M xs1 -S ap2
 ```
 
 for a single shot with the sassari dataset, record *slow* with master sensor *XS1* and
-slave sensor *AP2*. Use `-h` for more options.
+slave sensor *AP2*. Use `-h` for details and more options.
 
 You can also call a batch script to perform all combinations of master/slave with the
 sassari dataset and all available algorithms:
@@ -142,14 +142,13 @@ $ python3 sc_batch_sassari.py -b
 ![Class Diagram](assets/classes.svg)
 
 I tried several algorithms, nine in total. I show here the results of some of them.
-The complete code is available here, and will be updated as I come back to the project and
-make new tests.
+The complete code is available here.
 
-As I do not have a dataset to make the evaluation, I searched around for an open
-dataset. I found one which I will always refer as `sassari` dataset. As
-requested by the respective authors, here is the reference to their work:
-[check it
-out!](https://github.com/marcocaruso/mimu_optical_dataset_caruso_sassari/releases)
+I do not have a dataset to make the evaluation, but I found an open one, which
+I will refer as `sassari` dataset. As requested by the respective authors, here
+is the reference to their work:
+
+[sassari](https://github.com/marcocaruso/mimu_optical_dataset_caruso_sassari/releases)
 
 > When using this dataset, please cite: M. Caruso, A. M. Sabatini, M. Knaflitz,
 > M. Gazzoni, U. D. Croce and A. Cereatti, "Orientation Estimation Through
@@ -335,7 +334,7 @@ algorithms and all acquisitions.
 
 ## Misalignment
 
-The picture shows corrective euler angles around +/- 1[deg] for all algorithms.
+The picture shows corrective euler angles around +/- 2[deg] for all algorithms.
 For the Sassari setup, I do not expect any change in the displacement and
 alignment of the sensors along the acquisitions. I actually expect a fast
 convergence and a good accuracy at the estimation using the Q-method.  It is
